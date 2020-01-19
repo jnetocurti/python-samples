@@ -1,0 +1,5 @@
+venv
+.vscode
+fiis.txt
+*__pycache__
+.pytest_cache
