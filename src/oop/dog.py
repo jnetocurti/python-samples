@@ -23,5 +23,8 @@ class Dog(Canids):
     def activities(self):
         return ('play', 'bark')
 
+    def bark(self):
+        return self.__bark()
+
     def __bark(self):
         return "Woof! Woof!"

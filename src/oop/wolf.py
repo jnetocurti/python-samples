@@ -13,3 +13,6 @@ class Wolf(Canids):
 
     def activities(self):
         return ('hunt', 'howl')
+
+    def howl(self):
+        return "OWOooooooooooooooooooo!"
