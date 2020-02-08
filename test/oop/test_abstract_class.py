@@ -51,7 +51,7 @@ def test_implemented_abstract_class_method():
     assert "Carnivore" == Carnivore.of_order()
     assert "Carnivore" == Wolf().of_order()
     assert "Canids" == Canids.of_family()
-    assert "Canids" == Dog().of_family()
+    assert "Canids" == Dog("Rex").of_family()
 
 
 def test_can_instantiate_wolf():
@@ -61,16 +61,16 @@ def test_can_instantiate_wolf():
 
 
 def test_can_instantiate_dog():
-    dog = Dog()
+    dog = Dog("Rex")
     assert dog is not None
     assert "Class: Mammal, Order: Carnivore, Family: Canids, Specie: Canis lupus familiaris" == str(dog)  # noqa?
 
 
 def test_implemented_abstract_property():
     assert "Canis lupus" == Wolf().specie
-    assert "Canis lupus familiaris" == Dog().specie
+    assert "Canis lupus familiaris" == Dog("Rex").specie
 
 
 def test_implemented_abstract_method():
-    assert ('play', 'bark') == Dog().activities()
+    assert ('play', 'bark') == Dog("Rex").activities()
     assert ('hunt', 'howl') == Wolf().activities()
