@@ -2,7 +2,7 @@ import re
 import pytest
 from mock import patch
 from io import StringIO
-from src.functions import decorators
+from src.decorator import decorators
 
 
 @patch("sys.stdout", new_callable=StringIO)
@@ -83,7 +83,7 @@ def test_params_modifier_class_version(mock_stdout):
             mock_stdout.getvalue())
 
 
-@patch('src.functions.decorators.get_user_roles')
+@patch('src.decorator.decorators.get_user_roles')
 def test_authorize(get_user_roles_mock):
     get_user_roles_mock.return_value = ('user', 'admin', 'root')
 
@@ -101,7 +101,7 @@ def test_authorize(get_user_roles_mock):
         do_something_not_authorized()
 
 
-@patch('src.functions.decorators.get_user_roles')
+@patch('src.decorator.decorators.get_user_roles')
 def test_authorize_class_version(get_user_roles_mock):
     get_user_roles_mock.return_value = ('user', 'admin', 'root')
 
