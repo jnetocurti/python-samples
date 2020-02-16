@@ -10,8 +10,7 @@ from src.oop.dog import Dog
 def test_can_not_instantiate_animal():
     with pytest.raises(
             TypeError,
-            match="Can't instantiate abstract class Animal with abstract"
-        + " methods activities, of_class, of_family, of_order, specie"
+            match="Can't instantiate abstract class Animal with abstract methods activities, of_class, of_family, of_order, specie"  # noqa
     ):
         _ = Animal()
 
@@ -19,8 +18,7 @@ def test_can_not_instantiate_animal():
 def test_can_not_instantiate_mammal():
     with pytest.raises(
             TypeError,
-            match="Can't instantiate abstract class Mammal with abstract"
-        + " methods activities, of_family, of_order, specie"
+            match="Can't instantiate abstract class Mammal with abstract methods activities, of_family, of_order, specie"  # noqa
     ):
         _ = Mammal()
 
@@ -32,8 +30,7 @@ def test_implemented_abstract_static_method():
 def test_can_not_instantiate_carnivore():
     with pytest.raises(
             TypeError,
-            match="Can't instantiate abstract class Carnivore with abstract"
-        + " methods activities, of_family, specie"
+            match="Can't instantiate abstract class Carnivore with abstract methods activities, of_family, specie"  # noqa
     ):
         _ = Carnivore()
 
@@ -41,8 +38,7 @@ def test_can_not_instantiate_carnivore():
 def test_can_not_instantiate_canids():
     with pytest.raises(
             TypeError,
-            match="Can't instantiate abstract class Canids with abstract"
-        + " methods activities, specie"
+            match="Can't instantiate abstract class Canids with abstract methods activities, specie"  # noqa
     ):
         _ = Canids()
 

@@ -62,7 +62,7 @@ def test_get_from_simple_generator():
     assert 0 == next(result)
     assert 1 == next(result)
     assert 2 == next(result)
-    assert None == next(result, None)
+    assert next(result, None) is None
 
 
 def test_get_from_conditional_generator():
@@ -72,7 +72,7 @@ def test_get_from_conditional_generator():
     result = comprehension.get_from_conditional_generator(0, 3)
     assert 0 == next(result)
     assert 2 == next(result)
-    assert None == next(result, None)
+    assert next(result, None) is None
 
 
 def test_get_from_simple_dict_comprehension():

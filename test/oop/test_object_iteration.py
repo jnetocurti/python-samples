@@ -1,4 +1,3 @@
-import pytest
 from src.oop.dog import Dog
 from src.oop.pets import Pets
 

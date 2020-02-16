@@ -1,4 +1,3 @@
-import pytest
 from src.oop.dogwolf import DogWolf
 from src.oop.dogwolf import DogWolfMixin
 

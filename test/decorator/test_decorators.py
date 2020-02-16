@@ -91,7 +91,7 @@ def test_authorize(get_user_roles_mock):
     def do_something_authorized():
         pass
 
-    assert None == do_something_authorized()
+    assert do_something_authorized() is None
 
     @decorators.authorize('other')
     def do_something_not_authorized():
@@ -109,7 +109,7 @@ def test_authorize_class_version(get_user_roles_mock):
     def do_something_authorized():
         pass
 
-    assert None == do_something_authorized()
+    assert do_something_authorized() is None
 
     @decorators.Authorize('other')
     def do_something_not_authorized():

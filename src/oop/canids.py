@@ -1,5 +1,4 @@
 from src.oop.carnivore import Carnivore
-from abc import abstractclassmethod, abstractmethod, abstractproperty
 
 
 class Canids(Carnivore):

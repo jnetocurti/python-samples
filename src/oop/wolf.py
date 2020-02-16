@@ -1,5 +1,4 @@
 from src.oop.canids import Canids
-from abc import abstractclassmethod, abstractmethod, abstractproperty
 
 
 class Wolf(Canids):

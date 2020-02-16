@@ -1,5 +1,4 @@
 from src.oop.animal import Animal
-from abc import abstractclassmethod, abstractmethod, abstractproperty
 
 
 class Mammal(Animal):
