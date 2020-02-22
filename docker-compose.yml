@@ -1,0 +1,13 @@
+version: "3.3"
+
+services:
+  db:
+    image: mysql:8.0.19
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_DATABASE: mysqldb
+      MYSQL_USER: mysqluser
+      MYSQL_PASSWORD: mysqlpsw
+      MYSQL_ROOT_PASSWORD: mysqlpsw
+    ports:
+      - 3306:3306

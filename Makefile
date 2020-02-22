@@ -1,3 +1,6 @@
+include .env
+export $(shell sed 's/=.*//' .env)
+
 ENV_HOME:=.venv
 PYTHON_VERSION:=3.6.5
 BOLD:=$(shell tput bold)
@@ -33,6 +36,12 @@ create:
 	@echo ""
 	@echo "source $(ENV_HOME)/bin/activate"
 	@echo $(SEPARATOR)
+
+docker-up:
+	@docker-compose up -d --no-recreate
+
+docker-down:
+	@docker-compose stop
 
 lint:
 	@$(ENV_HOME)/bin/flake8 --show-source ./src ./test
