@@ -35,8 +35,20 @@ class PostDao():
             else:
                 return cursor.rowcount
 
-    def update(self):
-        pass
+    def update(self, id, **kwargs):
+        fields = ','.join(f'{k}=%s' for k in kwargs.keys())
+        query = f"UPDATE posts SET {fields} WHERE id = %s"
+        args = tuple([v for v in kwargs.values()]) + (id,)
+        with connection() as conn:
+            try:
+                cursor = conn.cursor()
+                cursor.execute(query, args)
+                conn.commit()
+            except ProgrammingError as error:
+                print(f"Error to search posts: {error}")
+                raise error
+            else:
+                return cursor.rowcount
 
     def delete(self, id):
         query = "DELETE FROM posts WHERE id = %s"
