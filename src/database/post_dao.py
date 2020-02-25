@@ -38,8 +38,18 @@ class PostDao():
     def update(self):
         pass
 
-    def delete(self):
-        pass
+    def delete(self, id):
+        query = "DELETE FROM posts WHERE id = %s"
+        with connection() as conn:
+            try:
+                cursor = conn.cursor()
+                cursor.execute(query, (id,))
+                conn.commit()
+            except ProgrammingError as error:
+                print(f"Error to search posts: {error}")
+                raise error
+            else:
+                return cursor.rowcount
 
     def find_by_id(self, id):
         query = "SELECT * FROM posts WHERE id = %s"
