@@ -22,15 +22,15 @@ def init():
 
 def test_insert():
     post = post_dao.save(
-        Post("Test subject", "Test content")
+        Post(subject="Test subject", content="Test content")
     )
     assert 1 == post.id
 
 
 def test_bulk_save():
     row_count = post_dao.bulk_save([
-        Post("Test subject 1", "Test content 1"),
-        Post("Test subject 2", "Test content 2"),
-        Post("Test subject 3", "Test content 3")
+        Post(subject="Test subject 1", content="Test content 1"),
+        Post(subject="Test subject 2", content="Test content 2"),
+        Post(subject="Test subject 3", content="Test content 3")
     ])
     assert 3 == row_count

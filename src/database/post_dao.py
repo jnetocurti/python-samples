@@ -6,7 +6,7 @@ from mysql.connector.errors import ProgrammingError
 class PostDao():
 
     def save(self, post):
-        query = "INSERT INTO posts(subject, content) values (%s, %s)"
+        query = "INSERT INTO posts(subject, content) VALUES (%s, %s)"
         with connection() as conn:
             try:
                 cursor = conn.cursor()
@@ -17,10 +17,10 @@ class PostDao():
                 raise error
             else:
                 id = cursor.lastrowid
-                return Post(post.subject, post.content, id)
+                return Post(id=id, subject=post.subject, content=post.content)
 
     def bulk_save(self, posts):
-        query = "INSERT INTO posts(subject, content) values (%s, %s)"
+        query = "INSERT INTO posts(subject, content) VALUES (%s, %s)"
         with connection() as conn:
             try:
                 args = tuple(
@@ -41,8 +41,31 @@ class PostDao():
     def delete(self):
         pass
 
-    def find(self):
-        pass
+    def find_by_id(self, id):
+        query = "SELECT * FROM posts WHERE id = %s"
+        with connection() as conn:
+            try:
+                cursor = conn.cursor()
+                cursor.execute(query, (id,))
+            except ProgrammingError as error:
+                print(f"Error to search posts: {error}")
+                raise error
+            else:
+                result = cursor.fetchone()
+                return Post(
+                    id=result[0],
+                    subject=result[1],
+                    content=result[2]
+                )
 
     def find_all(self):
-        pass
+        with connection() as conn:
+            try:
+                cursor = conn.cursor()
+                cursor.execute("SELECT * FROM posts")
+            except ProgrammingError as error:
+                print(f"Error to search posts: {error}")
+                raise error
+            else:
+                return [Post(id=p[0], subject=p[1], content=p[2])
+                        for p in cursor.fetchall()]
