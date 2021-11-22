@@ -1,4 +1,5 @@
 import pytest
+
 from src.database.post import Post
 from src.database.post_dao import PostDao
 from src.database.connection import connection

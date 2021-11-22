@@ -1,5 +1,10 @@
-from abc import ABC, abstractstaticmethod, abstractclassmethod, \
-    abstractmethod,  abstractproperty
+from abc import (
+    ABC,
+    abstractmethod,
+    abstractproperty,
+    abstractclassmethod,
+    abstractstaticmethod
+)
 
 
 class Animal(ABC):

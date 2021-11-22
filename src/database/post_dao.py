@@ -1,6 +1,7 @@
+from mysql.connector.errors import ProgrammingError
+
 from .post import Post
 from .connection import connection
-from mysql.connector.errors import ProgrammingError
 
 
 class PostDao():

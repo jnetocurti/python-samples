@@ -1,7 +1,9 @@
 import re
+from io import StringIO
+
 import pytest
 from mock import patch
-from io import StringIO
+
 from src.decorator import decorators
 
 

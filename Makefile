@@ -43,6 +43,9 @@ docker-up:
 docker-down:
 	@docker-compose stop
 
+isort:
+	@$(ENV_HOME)/bin/isort ./src ./test
+
 lint:
 	@$(ENV_HOME)/bin/flake8 --show-source ./src ./test
 

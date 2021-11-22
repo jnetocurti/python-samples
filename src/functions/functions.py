@@ -1,5 +1,5 @@
-from functools import reduce
 from calendar import mdays, month_name
+from functools import reduce
 
 
 def zip_months_and_days():

@@ -1,4 +1,5 @@
 import pytest
+
 from src.oop.dog import Dog
 
 dog = Dog("Rex")

@@ -1,6 +1,8 @@
-from os import path
-from mock import patch
 from io import StringIO
+from os import path
+
+from mock import patch
+
 from src.files import files
 
 INPUT_FILE_PATH = "assets/fiis.csv"

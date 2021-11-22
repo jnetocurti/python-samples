@@ -1,6 +1,7 @@
 import os
-from mysql.connector import connect
 from contextlib import contextmanager
+
+from mysql.connector import connect
 
 params = {
     "host": os.getenv('MYSQL_HOST'),

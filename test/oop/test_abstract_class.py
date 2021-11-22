@@ -1,10 +1,11 @@
 import pytest
+
+from src.oop.dog import Dog
+from src.oop.wolf import Wolf
 from src.oop.animal import Animal
+from src.oop.canids import Canids
 from src.oop.mammal import Mammal
 from src.oop.carnivore import Carnivore
-from src.oop.canids import Canids
-from src.oop.wolf import Wolf
-from src.oop.dog import Dog
 
 
 def test_can_not_instantiate_animal():

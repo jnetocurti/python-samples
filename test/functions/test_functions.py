@@ -1,6 +1,10 @@
-from src.functions.functions import zip_months_and_days, \
-    filter_months_with_31_days, map_to_only_month_names, \
-    reduce_year_months_to_total_days, reduce_to_month_with_smaller_name
+from src.functions.functions import (
+    zip_months_and_days,
+    map_to_only_month_names,
+    filter_months_with_31_days,
+    reduce_year_months_to_total_days,
+    reduce_to_month_with_smaller_name
+)
 
 
 def test_zip_months_and_days():
