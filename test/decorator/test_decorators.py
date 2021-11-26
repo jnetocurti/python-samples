@@ -3,7 +3,6 @@ from io import StringIO
 
 import pytest
 from mock import patch
-
 from src.decorator import decorators
 
 

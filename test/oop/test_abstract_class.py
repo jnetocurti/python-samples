@@ -1,5 +1,4 @@
 import pytest
-
 from src.oop.dog import Dog
 from src.oop.wolf import Wolf
 from src.oop.animal import Animal
